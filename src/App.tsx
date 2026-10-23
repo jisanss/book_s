@@ -209,12 +209,12 @@ export default function App() {
         {currentTab === 'settings' && <SettingsView apiKey={apiKey} kakaoApiKey={kakaoApiKey} saveKeysToDb={saveKeysToDb} />}
       </main>
 
-      {/* Bottom Nav */}
-      <nav className="fixed bottom-0 w-full bg-[#FDFBF7] border-t-[2.5px] border-[#451A03] p-2 flex justify-around items-center z-20 max-w-2xl mx-auto left-0 right-0 shadow-[0_-4px_0px_rgba(69,26,3,0.03)]">
+{/* Bottom Nav */}
+<nav className="fixed bottom-0 w-full bg-[#FDFBF7] border-t-[2.5px] border-[#451A03] p-2 flex justify-around items-center z-20 max-w-2xl mx-auto left-0 right-0 shadow-[0_-4px_0px_rgba(69,26,3,0.03)]">
         <NavBtn icon={<Library className={currentTab === 'tower' ? 'fill-[#FDE047]' : ''}/>} label="내 서재" active={currentTab === 'tower'} onClick={() => setCurrentTab('tower')} />
         <NavBtn icon={<BookOpen className={currentTab === 'desk' ? 'fill-[#FDE047]' : ''}/>} label="내 책상" active={currentTab === 'desk'} onClick={() => setCurrentTab('desk')} />
         <NavBtn icon={<Plus className="w-8 h-8 text-[#451A03]" strokeWidth={3} />} active={false} onClick={() => setCurrentTab('search')} isPrimary />
-        <NavBtn icon={<Calendar className={currentTab === 'record' ? 'fill-[#FDE047]' : ''}/>} label="기록" active={currentTab === 'record'} onClick={() => alert("기록 탭은 다음 업데이트(v1.1)에 추가될 예정입니다!")} />
+        <NavBtn icon={<Calendar className={currentTab === 'record' ? 'fill-[#FDE047]' : ''}/>} label="기록" active={currentTab === 'record'} onClick={() => setCurrentTab('record')} />
         <NavBtn icon={<Settings className={currentTab === 'settings' ? 'text-[#FDE047]' : ''}/>} label="설정" active={currentTab === 'settings'} onClick={() => setCurrentTab('settings')} />
       </nav>
     </div>
